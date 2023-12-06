@@ -1,3 +1,3 @@
-# e36 Showcase
+# BMW Showcase
 
-A simple app that is about BMW e36
+# A website that is meant for BMW fangirls
