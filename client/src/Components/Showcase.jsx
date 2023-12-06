@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unknown-property */
-import { Canvas } from '@react-three/fiber';
 import Car from './Car';
 import Ground from './Ground';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
