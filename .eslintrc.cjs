@@ -16,10 +16,4 @@ module.exports = {
     'react/jsx-uses-vars': 'error',
     'react/jsx-uses-react': 'error',
   },
-  'no-unused-vars': [
-    'error',
-    {
-      varsIgnorePattern: '^h$',
-    },
-  ],
 };

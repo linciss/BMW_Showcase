@@ -2,12 +2,15 @@ import { useLoader } from '@react-three/fiber';
 import { TextureLoader, RepeatWrapping } from 'three';
 import { useEffect } from 'react';
 import { MeshReflectorMaterial } from '@react-three/drei';
+import React from 'react';
+import roughnessImage from '../../public/textures/terrain-roughness.jpg';
+import normalImage from '../../public/textures/terrain-normal.jpg';
+
 const Ground = () => {
   const [roughness, normal] = useLoader(TextureLoader, [
-    './public/textures/terrain-roughness.jpg',
-    './public/textures/terrain-normal.jpg',
+    roughnessImage,
+    normalImage,
   ]);
-
   useEffect(() => {
     [normal, roughness].forEach((t) => {
       t.wrapS = RepeatWrapping;

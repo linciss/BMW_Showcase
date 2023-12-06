@@ -1,15 +1,16 @@
-import { Canvas } from '@react-three/fiber';
-import React, { Suspense } from 'react';
+import React from 'react';
 import './style.css';
-import Showcase from './Components/Showcase';
+import { Home } from './_root/pages/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ModelPage from './_root/pages/ModelPage';
 const App = () => {
   return (
-    <Suspense fallback={null}>
-      <div>Herll world</div>
-      <Canvas shadows>
-        <Showcase />
-      </Canvas>
-    </Suspense>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/model/:modelPath" element={<ModelPage />} />
+      </Routes>
+    </Router>
   );
 };
 

@@ -1,7 +1,11 @@
+/* eslint-disable react/no-unknown-property */
+import { Canvas } from '@react-three/fiber';
 import Car from './Car';
 import Ground from './Ground';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-const Showcase = () => {
+import React from 'react';
+
+const Showcase = ({ path }) => {
   return (
     <>
       <OrbitControls target0={[0, 0.35, 0]} maxPolarAngle={1.45} />
@@ -27,7 +31,7 @@ const Showcase = () => {
         shadow-bias={-0.0001}
       />
       <Ground />
-      <Car />
+      <Car path={path} />
     </>
   );
 };
