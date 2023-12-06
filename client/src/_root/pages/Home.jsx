@@ -1,19 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
-  //   const [model, setModel] = useState(null);
-  const navigate = useNavigate();
-
-  const handleClick = (path) => {
-    navigate(`/model/${encodeURIComponent(path)}`);
-  };
-
   return (
     <>
       <div>Hello world</div>
-      <button onClick={() => handleClick('e36')}>BMW e36</button>
-      <button onClick={() => handleClick('e46')}>BMW e46</button>
+      <Link to="/model/e36">
+        <button>BMW e36</button>
+      </Link>
+      <Link to="/model/e46">
+        <button>BMW e46</button>
+      </Link>
     </>
   );
 };
