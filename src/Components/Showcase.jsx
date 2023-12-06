@@ -1,4 +1,4 @@
-import { Car } from './Car';
+import Car from './Car';
 import Ground from './Ground';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 const Showcase = () => {
@@ -27,6 +27,7 @@ const Showcase = () => {
         shadow-bias={-0.0001}
       />
       <Ground />
+      <Car />
     </>
   );
 };
