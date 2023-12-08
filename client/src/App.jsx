@@ -1,16 +1,22 @@
 import React from 'react';
-import './style.css';
 import { Home } from './_root/pages/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ModelPage from './_root/pages/ModelPage';
+import './index.css';
+import { Navbar } from './Components/common/Navbar';
+import { Insights } from './_root/pages/Insights';
+import { Models } from './_root/pages/Models';
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/model/:modelPath" element={<ModelPage />} />
-      </Routes>
-    </Router>
+    <main className=" bg-zinc-500 ">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/models" element={<Models />} />
+          <Route path="/models/:modelPath" element={<Insights />} />
+        </Routes>
+      </Router>
+    </main>
   );
 };
 

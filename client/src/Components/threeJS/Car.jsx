@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { Mesh, MeshStandardMaterial } from 'three';
+import { Mesh } from 'three';
 
 const Car = ({ path }) => {
   const gltf = useLoader(
