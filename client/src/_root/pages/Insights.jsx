@@ -29,8 +29,15 @@ export const Insights = () => {
   return (
     <main className="max-w-7xl m-auto">
       {/* SHOWS THE MODEL FOR CONVENIENCE */}
-      <div className={`model sticky top-0 ml-${marginLeft} p-4`}>
-        <h1 className="text-7xl font-semibold text-black">BMW {modelPath}</h1>
+      <div
+        className={`model sticky top-0 ml-${marginLeft} p-4 hidden sm:block transition-all duration-300`}
+      >
+        <h1
+          className="text-7xl font-semibold bg-gradient-to-r bg-clip-text text-transparent
+         from-white  to-blue-300 animate-text"
+        >
+          BMW {modelPath}
+        </h1>
       </div>
       <div className="flex flex-wrap sm:px-4 px-4 max-w-7xl m-auto flex-col">
         <Suspense
@@ -44,6 +51,14 @@ export const Insights = () => {
         </Suspense>
       </div>
       <main className="pb-8">
+        <div className={`p-4 block sm:hidden`}>
+          <h1
+            className="text-6xl font-semibold bg-gradient-to-r bg-clip-text
+           text-transparent from-white via-black to-blue-300 animate-text"
+          >
+            BMW {modelPath}
+          </h1>
+        </div>
         <h1 className="text-7xl font-semibold text-center text-black">
           Insights
         </h1>
