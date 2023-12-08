@@ -75,11 +75,20 @@ export const theme = {
           'background-position': 'right center',
         },
       },
+      button: {
+        '0%': {
+          transform: 'scale(1)',
+        },
+        '100%': {
+          transform: 'scale(1.2)',
+        },
+      },
     },
     animation: {
       'accordion-down': 'accordion-down 0.2s ease-out',
       'accordion-up': 'accordion-up 0.2s ease-out',
       text: 'text 5s ease infinite',
+      button: 'button 0.2s forwards',
     },
   },
 };
