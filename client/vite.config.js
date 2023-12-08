@@ -6,6 +6,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': new URL('./src', import.meta.url).pathname,
+      '#': new URL('./public', import.meta.url).pathname,
     },
   },
 });

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
-    <header className="flex justify-between items-center sm:px-16 px-8 py-4 max-w-7xl mx-auto relative top-0 bg-transparent z-10 right-0 left-0">
+    <header className="navbar flex justify-between items-center sm:px-16 px-8 py-4 max-w-7xl mx-auto top-0 bg-transparent z-10 right-0 left-0 sticky ">
       <NavLink to="/">
         <img
           src="./public/assets/logo.png"

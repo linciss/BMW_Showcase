@@ -5,9 +5,13 @@ import './index.css';
 import { Navbar } from './Components/common/Navbar';
 import { Insights } from './_root/pages/Insights';
 import { Models } from './_root/pages/Models';
+import bgImage from '#/assets/bg.jpg';
 const App = () => {
   return (
-    <main className=" bg-zinc-500 ">
+    <main
+      className="bg-zinc-500 bg-cover bg-center"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
       <Router>
         <Navbar />
         <Routes>

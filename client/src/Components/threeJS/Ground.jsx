@@ -4,8 +4,8 @@ import { TextureLoader, RepeatWrapping } from 'three';
 import { useEffect } from 'react';
 import { MeshReflectorMaterial } from '@react-three/drei';
 import React from 'react';
-import roughnessImage from './../../../public/textures/terrain-roughness.jpg';
-import normalImage from './../../../public/textures/terrain-normal.jpg';
+import roughnessImage from '#/textures/terrain-roughness.jpg';
+import normalImage from '#/textures/terrain-normal.jpg';
 
 const Ground = () => {
   const [roughness, normal] = useLoader(TextureLoader, [

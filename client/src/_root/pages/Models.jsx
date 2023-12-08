@@ -2,6 +2,7 @@ import { Button } from '@/Components/ui/button';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Skeleton } from '@/Components/ui/skeleton';
 
 export const Models = () => {
   const [data, setData] = useState([{}]);
@@ -25,12 +26,21 @@ export const Models = () => {
 
   return (
     <main className="flex flex-wrap sm:px-4 px-4 max-w-7xl m-auto flex-col">
-      <Link to="/models/e36">
-        <Button>BMW e36</Button>
-      </Link>
-      <Link to="/models/e46">
-        <Button>BMW e46</Button>
-      </Link>
+      {loading ? (
+        <Skeleton className="h-screen" />
+      ) : (
+        <>
+          <div className="max-w-min mx-auto">
+            {data.map((model) => (
+              <Link to={`/models/${model.model}`} key={model.id}>
+                <Button className="hover:animate-button px-8 py-4 text-lg from-white via-black to-blue-300">
+                  {model.model}
+                </Button>
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
     </main>
   );
 };

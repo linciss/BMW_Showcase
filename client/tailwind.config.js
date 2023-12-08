@@ -88,7 +88,7 @@ export const theme = {
       'accordion-down': 'accordion-down 0.2s ease-out',
       'accordion-up': 'accordion-up 0.2s ease-out',
       text: 'text 5s ease infinite',
-      button: 'button 0.2s forwards',
+      button: 'button 0.5s forwards',
     },
   },
 };
