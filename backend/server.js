@@ -1,6 +1,9 @@
 import Express from 'express';
-import { data } from './data/data.js';
+import cors from 'cors';
+import data from './data/data.js';
+
 const app = Express();
+app.use(cors());
 
 app.get('/api', (req, res) => {
   res.json(data);

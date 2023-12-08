@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     id: 1,
     mark: 'BMW',
@@ -69,3 +69,4 @@ export const data = [
     transmission: ['5-speed manual', '6-speed manual', '4-speed automatic'],
   },
 ];
+export default data;
