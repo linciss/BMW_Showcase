@@ -12,6 +12,9 @@ export const Navbar = () => {
         />
       </NavLink>
       <nav className="flex justify-end items-center text-lg gap-7">
+        <NavLink to="/models" className="text-2xl p-2 text-center ">
+          Models
+        </NavLink>
         <NavLink to="/about" className="text-2xl p-2 text-center ">
           About
         </NavLink>
