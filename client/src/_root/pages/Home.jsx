@@ -14,7 +14,9 @@ export const Home = () => {
         </h1>
         <div className="max-w-min mx-auto">
           <Link to="/models">
-            <Button className="block mx-auto">See the models</Button>
+            <Button className=" bg-black hover:bg-gradient-to-r hover:animate-text px-8 py-4 text-lg from-white via-black to-blue-300">
+              See the models
+            </Button>
           </Link>
         </div>
       </div>
