@@ -6,8 +6,7 @@ export const ParallaxImg = (props) => {
     <ParallaxBanner
       layers={[
         { image: props.bg, speed: -20 },
-
-        { image: props.fg, speed: -10, width: '20%', height: '20%' },
+        { image: props.fg, speed: -10, width: '80%' }, // Adjust the width as needed
       ]}
       style={{ height: props.height, marginTop: props.mt }}
       className="aspect-[2/1]"
