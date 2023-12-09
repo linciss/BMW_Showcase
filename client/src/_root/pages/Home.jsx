@@ -35,13 +35,10 @@ const Home = () => {
           </div>
         </div>
       </main>
-      <div className="overflow-hidden flex flex-col relative min-h-screen sm:justify-center p-4 md:h-full md:px-8 lg:px-16 max-w-7xl m-auto">
-        <div className="mx-auto max-w-7xl mb-8 sm:mb-48 ">
-          <Description containerRef={ref1} inView={inView1} />
-        </div>
-        <div className="mx-auto max-w-7xl mb-8 sm:mb-48">
-          <Description containerRef={ref2} inView={inView2} />
-        </div>
+      <div className="overflow-hidden flex flex-col relative min-h-screen sm:justify-center p-4 md:h-full md:px-8 lg:px-16 max-w-7xl m-auto gap-28">
+        <Description containerRef={ref1} inView={inView1} />
+
+        <Description containerRef={ref2} inView={inView2} />
       </div>
     </ParallaxProvider>
   );
