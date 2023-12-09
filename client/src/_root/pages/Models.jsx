@@ -25,7 +25,7 @@ const Models = () => {
   }, []);
 
   return (
-    <main className="flex flex-wrap sm:px-4 px-4 max-w-7xl m-auto flex-col">
+    <main className="flex flex-wrap sm:px-4 px-4 max-w-7xl m-auto flex-col z-10">
       {loading ? (
         <Skeleton className="h-screen" />
       ) : (

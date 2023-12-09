@@ -28,7 +28,7 @@ const Insights = () => {
     <main className="max-w-7xl m-auto">
       {/* SHOWS THE MODEL FOR CONVENIENCE */}
       <div
-        className={`model sticky top-0 ml-${marginLeft} p-4 hidden sm:block transition-all duration-300 w-1/2`}
+        className={`model sticky top-0 ml-${marginLeft} p-4 hidden sm:block transition-all duration-300 w-1/2 z-30`}
       >
         <h1
           className="text-7xl font-semibold bg-gradient-to-r bg-clip-text text-transparent
@@ -42,7 +42,7 @@ const Insights = () => {
           fallback={<Skeleton className="w-full h-[75vh] bg-slate-600" />}
         >
           <div className="w-full h-[75vh]">
-            <Canvas className="z-20">
+            <Canvas className="">
               <Showcase path={modelPath} />
             </Canvas>
           </div>

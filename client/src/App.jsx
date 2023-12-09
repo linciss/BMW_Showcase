@@ -3,8 +3,8 @@ import { Home, Models, Insights } from './_root/pages/index';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import { Navbar } from './Components/common/Navbar';
-
 import bgImage from '#/assets/bg.jpg';
+
 const App = () => {
   return (
     <main
