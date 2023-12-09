@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Skeleton } from '@/Components/ui/skeleton';
 
-export const Models = () => {
+const Models = () => {
   const [data, setData] = useState([{}]);
   const [loading, setLoading] = useState(true);
 
@@ -44,3 +44,5 @@ export const Models = () => {
     </main>
   );
 };
+
+export default Models;

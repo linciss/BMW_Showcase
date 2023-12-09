@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/Components/ui/button';
 import { Link } from 'react-router-dom';
 
-export const Home = () => {
+const Home = () => {
   return (
     <main className="flex flex-col sm:justify-center min-h-screen p-4 md:h-full md:px-8 lg:px-16">
       <div className="mx-auto max-w-7xl mb-48">
@@ -25,3 +25,4 @@ export const Home = () => {
     </main>
   );
 };
+export default Home;

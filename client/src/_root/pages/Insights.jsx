@@ -4,11 +4,11 @@ import Showcase from '../../Components/threeJS/Showcase';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
-export const Insights = () => {
+
+const Insights = () => {
   const { modelPath } = useParams();
   const [marginLeft, setMarginLeft] = useState(0);
 
-  // Offsets the model name when scrolling so it looks better
   useEffect(() => {
     const handleScroll = () => {
       const navBar = document.querySelector('.navbar');
@@ -117,3 +117,5 @@ export const Insights = () => {
     </main>
   );
 };
+
+export default Insights;
