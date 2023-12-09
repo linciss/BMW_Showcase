@@ -2,12 +2,19 @@ import React from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
 export const ParallaxImg = (props) => {
+  const background = {
+    image: props.bg,
+    speed: -20,
+  };
+  const foreground = {
+    image: props.fg,
+    speed: -10,
+    scale: 0.1,
+  };
+
   return (
     <ParallaxBanner
-      layers={[
-        { image: props.bg, speed: -20 },
-        { image: props.fg, speed: -10, width: '80%' }, // Adjust the width as needed
-      ]}
+      layers={[background, foreground]}
       style={{ height: props.height, marginTop: props.mt }}
       className="aspect-[2/1]"
     >
