@@ -1,86 +1,77 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/Components/ui/button';
 import { Link } from 'react-router-dom';
 import Car from '#/assets/car.gif';
+import { ParallaxImg } from '@/Components/common/ParallaxImg';
+import m3 from '#/assets/m3.png';
+import logo from '#/assets/logo.png';
+import bg1 from '#/assets/bg1.png';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const carRef = useRef(null);
-  const [display, setDisplay] = useState('hidden');
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     setIsLoaded(true);
 
     const handleScroll = () => {
-      const car = carRef.current;
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      const scrollPercentage =
-        (scrollPosition / (documentHeight - windowHeight)) * 100;
-
-      const translationFactor = (scrollPercentage / 100) * window.innerWidth;
-
-      if (
-        scrollPosition === 0 ||
-        translationFactor > window.innerWidth - car.offsetWidth * 0.5
-      ) {
-        setDisplay('hidden');
-        return;
-      } else if (
-        scrollPosition > 0 &&
-        !(translationFactor > window.innerWidth - car.offsetWidth * 0.5)
-      ) {
-        setDisplay('visible');
-      }
-
-      car.style.transform = `translateY(${scrollPosition}px) translateX(${translationFactor}px)`;
+      setScrollPosition(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  const parallaxVisibility = scrollPosition > 1;
+
   return (
-    <main
-      className={`flex flex-col relative overflow-x-hidden sm:justify-center min-h-screen p-4 md:h-full md:px-8 lg:px-16 ${
-        isLoaded ? 'animate-fadeIn' : ''
-      }`}
-    >
-      <div className="z-10">
-        <div className="mx-auto max-w-7xl mb-8 sm:mb-48">
-          <h1 className="text-center text-6xl sm:text-7xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-white via-black to-blue-300 animate-text block mb-4">
-            Are you a BMW fan?
-          </h1>
+    <ParallaxProvider>
+      <main
+        className={`flex flex-col relative min-h-screen sm:justify-center p-4 md:h-full md:px-8 lg:px-16 max-w-7xl m-auto`}
+      >
+        <div className={`z-10 ${isLoaded ? 'animate-fadeIn' : ''} `}>
+          <div className="mx-auto max-w-7xl mb-8 sm:mb-48">
+            <h1 className="text-center text-8xl sm:text-9xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-white via-black to-blue-300 animate-text block">
+              BMW
+            </h1>
+            <h1 className="text-center text-6xl sm:text-7xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-white via-black to-blue-300 animate-text block mb-4">
+              FANPAGE
+            </h1>
+          </div>
+        </div>
+        <div
+          className={`flex ${
+            parallaxVisibility
+              ? 'animate-fadeInBottom'
+              : 'opacity-0 animate-fadeOut '
+          } `}
+        >
+          <div className={`w-3/4 `}>
+            <ParallaxImg bg={bg1} fg={m3} height="300px" mt="0px" />
+          </div>
           <h1 className="text-center text-5xl sm:text-6xl md:text-7xl font-semibold text-white mb-4 transition-all duration-500 ease-in-out">
             Are you interested to see what each of BMW models are capable of?
           </h1>
-
-          <div className="max-w-min mx-auto">
-            <Link to="/models">
-              <Button className="hover:animate-button px-6 py-3 text-lg sm:text-xl bg-red-800">
-                <p className="bg-gradient-to-r bg-clip-text text-transparent from-white via-black to-blue-300 animate-text block">
-                  YES! Take me to the models!
-                </p>
-              </Button>
-            </Link>
-          </div>
         </div>
-      </div>
-
-      <div
-        className={`absolute top-1/3 transform lg:-translate-x-80 -translate-x-36 ${display}`}
-      >
-        <img ref={carRef} src={Car} alt="car" className="car lg:w-1/4 w-1/2" />
-      </div>
-    </main>
+      </main>
+    </ParallaxProvider>
   );
 };
 
 export default Home;
+
+/*  */
+//           <div className="max-w-min mx-auto">
+//           <Link to="/models">
+//             <Button className="hover:animate-button px-6 py-3 text-lg sm:text-xl bg-red-800">
+//               <p className="bg-gradient-to-r bg-clip-text text-transparent from-white via-black to-blue-300 animate-text block">
+//                 YES! Take me to the models!
+//               </p>
+//             </Button>
+//           </Link>
+//         </div>
+// }

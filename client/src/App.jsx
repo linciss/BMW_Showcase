@@ -8,7 +8,7 @@ import bgImage from '#/assets/bg.jpg';
 const App = () => {
   return (
     <main
-      className="bg-zinc-500 bg-cover bg-center max-w-full animate-fadeIn"
+      className="bg-zinc-500 bg-cover bg-center  animate-fadeIn"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <Router>

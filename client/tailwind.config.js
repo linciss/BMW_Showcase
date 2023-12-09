@@ -102,8 +102,19 @@ export const theme = {
           opacity: '0',
         },
       },
+      fadeInBottom: {
+        '0%': {
+          opacity: '0',
+          transform: 'translateY(100%)',
+        },
+        '100%': {
+          opacity: '1',
+          transform: 'translateY(0)',
+        },
+      },
     },
     animation: {
+      fadeInBottom: 'fadeInBottom 1s ease-in',
       fadeIn: 'fadeIn 0.5s ease-in',
       fadeOut: 'fadeOut 0.5s ease-out',
       'accordion-down': 'accordion-down 0.2s ease-out',
