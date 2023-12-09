@@ -74,3 +74,14 @@
     @apply bg-background text-foreground;
   }
 }
+.bmw-blue {
+  color: #81c4ff;
+}
+
+.bmw-dark-blue {
+  color: #16588e;
+}
+
+.bmw-light-blue {
+  color: #e7222e;
+}

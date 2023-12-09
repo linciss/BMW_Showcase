@@ -50,6 +50,9 @@ export const theme = {
         DEFAULT: 'hsl(var(--card))',
         foreground: 'hsl(var(--card-foreground))',
       },
+      'bmw-blue': '#81C4FF',
+      'bmw-dark-blue': '#16588E',
+      'bmw-red': '#E7222E',
     },
     borderRadius: {
       lg: 'var(--radius)',
@@ -83,8 +86,26 @@ export const theme = {
           transform: 'scale(1.2)',
         },
       },
+      fadeIn: {
+        '0%': {
+          opacity: '0',
+        },
+        '100%': {
+          opacity: '1',
+        },
+      },
+      fadeOut: {
+        '0%': {
+          opacity: '1',
+        },
+        '100%': {
+          opacity: '0',
+        },
+      },
     },
     animation: {
+      fadeIn: 'fadeIn 0.5s ease-in',
+      fadeOut: 'fadeOut 0.5s ease-out',
       'accordion-down': 'accordion-down 0.2s ease-out',
       'accordion-up': 'accordion-up 0.2s ease-out',
       text: 'text 5s ease infinite',

@@ -11,9 +11,7 @@ const Insights = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const navBar = document.querySelector('.navbar');
-
-      if (window.scrollY > navBar.offsetHeight) {
+      if (window.scrollY > 0) {
         setMarginLeft(32);
       } else {
         setMarginLeft(0);
@@ -30,7 +28,7 @@ const Insights = () => {
     <main className="max-w-7xl m-auto">
       {/* SHOWS THE MODEL FOR CONVENIENCE */}
       <div
-        className={`model sticky top-0 ml-${marginLeft} p-4 hidden sm:block transition-all duration-300`}
+        className={`model sticky top-0 ml-${marginLeft} p-4 hidden sm:block transition-all duration-300 w-1/2`}
       >
         <h1
           className="text-7xl font-semibold bg-gradient-to-r bg-clip-text text-transparent
