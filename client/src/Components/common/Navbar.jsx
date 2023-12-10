@@ -28,8 +28,10 @@ export const Navbar = () => {
 
   return (
     <header
-      className="navbar bg-zinc-700 flex justify-between items-center 
-    sm:px-16 px-14 max-w-7xl mx-auto top-0 bg-transparent z-20 right-0 left-0 sticky"
+      className={`navbar bg-zinc-700 flex justify-between items-center 
+    sm:px-16 px-14 max-w-7xl mx-auto top-0 bg-transparent  right-0 left-0 sticky ${
+      isOpen ? 'z-50' : 'z-20'
+    }`}
     >
       <NavLink to="/">
         <img src={logo} alt="logo" className="h-20 w-20 p-2" />
@@ -38,9 +40,9 @@ export const Navbar = () => {
         <nav
           className={`${
             isOpen
-              ? 'visible flex fixed inset-0 bg-zinc-700 flex-col justify-center'
+              ? 'visible flex fixed inset-0 bg-zinc-800 flex-col justify-center z-50'
               : 'hidden'
-          } md:flex md:items-center md:text-lg md:gap-7 z-40 }}`}
+          } md:flex md:items-center md:text-lg md:gap-7 z-45 }}`}
         >
           <NavLink
             to="/"

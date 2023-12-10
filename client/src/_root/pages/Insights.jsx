@@ -6,7 +6,7 @@ import { Canvas } from '@react-three/fiber';
 
 const StickyTitle = ({ title, marginLeft }) => (
   <div
-    className={`sm:block py-1 lg:py-0 sticky top-0 h-full px-4 transition-all duration-300 w-2/4 sm:w-1/2 z-20`}
+    className={`sm:block py-1 lg:py-0 sticky top-0 h-full px-4 transition-all duration-300 w-2/4 sm:w-1/2 z-20 overflow-hidden`}
     style={{ marginLeft: `${marginLeft / 4}rem` }}
   >
     <h1
