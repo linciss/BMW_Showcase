@@ -11,6 +11,7 @@ export const Description = ({ id, bg, fg, text }) => {
     triggerOnce: true,
   });
 
+  const isEven = id % 2 === 0;
   return (
     <div
       ref={ref}
@@ -18,12 +19,25 @@ export const Description = ({ id, bg, fg, text }) => {
         inView ? 'animate-fadeInBottom' : `opacity-0 }}`
       }`}
     >
-      <div className="w-full sm:w-3/4">
-        <ParallaxImg bg={bg} fg={fg} height="300px" mt="0px" />
-      </div>
-      <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-white mb-4 transition-all duration-500 ease-in-out">
-        {text}
-      </h1>
+      {isEven ? (
+        <>
+          <div className="w-full sm:w-3/4">
+            <ParallaxImg bg={bg} fg={fg} height="300px" mt="0px" />
+          </div>
+          <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-white mb-4 transition-all duration-500 ease-in-out">
+            {text}
+          </h1>
+        </>
+      ) : (
+        <>
+          <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-white mb-4 transition-all duration-500 ease-in-out">
+            {text}
+          </h1>
+          <div className="w-full sm:w-3/4">
+            <ParallaxImg bg={bg} fg={fg} height="300px" mt="0px" />
+          </div>
+        </>
+      )}
     </div>
   );
 };
