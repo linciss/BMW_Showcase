@@ -6,6 +6,7 @@ import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
 
 const Insights = () => {
+  console.log('Rendering insights!');
   const { modelPath } = useParams();
   const [marginLeft, setMarginLeft] = useState(0);
 

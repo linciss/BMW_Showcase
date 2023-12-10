@@ -114,7 +114,7 @@ export const theme = {
       },
     },
     animation: {
-      fadeInBottom: 'fadeInBottom 1s ease-in',
+      fadeInBottom: 'fadeInBottom 1.5s ease-in',
       fadeIn: 'fadeIn 0.5s ease-in',
       fadeOut: 'fadeOut 0.5s ease-out',
       'accordion-down': 'accordion-down 0.2s ease-out',

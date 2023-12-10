@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '#/assets/logo.png';
 
 export const Navbar = () => {
+  console.log('Rendering Navbar!');
   return (
     <header className="navbar  flex justify-between items-center sm:px-16 px-8 py-4 max-w-7xl mx-auto top-0 bg-transparent z-20 right-0 left-0 sticky ">
       <NavLink to="/">

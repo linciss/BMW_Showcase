@@ -5,18 +5,15 @@ import axios from 'axios';
 import { Skeleton } from '@/Components/ui/skeleton';
 
 const Home = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  console.log('Rendering home!');
   const [data, setData] = useState([{}]);
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-        'http://localhost:5000/api/description'
+          'http://localhost:5000/api/description'
         );
         setData(response.data);
         console.log(response.data);
@@ -28,12 +25,13 @@ const Home = () => {
     };
 
     fetchData();
+    console.log('Fetching data! :>> ');
   }, []);
 
   return (
     <ParallaxProvider>
       <main className="flex flex-col relative min-h-screen justify-center p-4 md:h-full md:px-8 lg:px-16 max-w-7xl m-auto overflow-hidden">
-        <div className={`z-10 ${isLoaded ? 'animate-fadeIn' : ''}`}>
+        <div className={`z-10 ${!loading ? 'animate-fadeIn' : ''}`}>
           <div className="mx-auto max-w-7xl mb-8 sm:mb-48">
             <h1 className="text-center text-8xl sm:text-9xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-bmw-blue via-bmw-dark-blue to-bmw-red animate-text block">
               BMW

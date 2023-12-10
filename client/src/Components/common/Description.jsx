@@ -1,18 +1,21 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { ParallaxImg } from './ParallaxImg';
 import { useInView } from 'react-intersection-observer';
 
-export const Description = ({ bg, fg, text }) => {
+export const Description = ({ id, bg, fg, text }) => {
+  console.log('Rendering Description!' + id);
   // observes wether or not the container is in view
   const [ref, inView] = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
 
   return (
     <div
       ref={ref}
       className={`flex flex-col sm:flex-row ${
-        inView ? 'animate-fadeInBottom' : `opacity-0 ${console.log(inView)}}`
+        inView ? 'animate-fadeInBottom' : `opacity-0 }}`
       }`}
     >
       <div className="w-full sm:w-3/4">

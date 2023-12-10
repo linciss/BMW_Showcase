@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
 export const ParallaxImg = (props) => {
+  // console.log('Rendering paralaxImg!');
   const background = {
     image: props.bg,
     speed: -20,

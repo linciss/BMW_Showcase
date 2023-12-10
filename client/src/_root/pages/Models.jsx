@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Skeleton } from '@/Components/ui/skeleton';
 
 const Models = () => {
+  console.log('Rendering models!');
   const [data, setData] = useState([{}]);
   const [loading, setLoading] = useState(true);
 
