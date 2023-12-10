@@ -1,30 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { ParallaxImg } from '@/Components/common/ParallaxImg';
-import bg1 from '#/assets/bg1.png';
-import m3 from '#/assets/m3.png';
-import { useInView } from 'react-intersection-observer';
 import { Description } from '@/Components/common/Description';
+import axios from 'axios';
+import { Skeleton } from '@/Components/ui/skeleton';
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-
+  const [data, setData] = useState([{}]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
-  const [ref1, inView1] = useInView({
-    threshold: 0,
-  });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+        'http://localhost:5000/api/description'
+        );
+        setData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const [ref2, inView2] = useInView({
-    threshold: 0,
-  });
+    fetchData();
+  }, []);
 
   return (
     <ParallaxProvider>
       <main className="flex flex-col relative min-h-screen justify-center p-4 md:h-full md:px-8 lg:px-16 max-w-7xl m-auto overflow-hidden">
-        <div className={`z-10 ${isLoaded ? 'animate-fadeIn' : ''}`} ref={ref1}>
+        <div className={`z-10 ${isLoaded ? 'animate-fadeIn' : ''}`}>
           <div className="mx-auto max-w-7xl mb-8 sm:mb-48">
             <h1 className="text-center text-8xl sm:text-9xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-bmw-blue via-bmw-dark-blue to-bmw-red animate-text block">
               BMW
@@ -35,11 +44,15 @@ const Home = () => {
           </div>
         </div>
       </main>
-      <div className="overflow-hidden flex flex-col relative min-h-screen sm:justify-center p-4 md:h-full md:px-8 lg:px-16 max-w-7xl m-auto gap-28">
-        <Description containerRef={ref1} inView={inView1} />
-
-        <Description containerRef={ref2} inView={inView2} />
-      </div>
+      {loading ? (
+        <Skeleton className="h-screen" />
+      ) : (
+        <div className="overflow-hidden flex flex-col relative min-h-screen sm:justify-center p-4 md:h-full md:px-8 lg:px-16 max-w-7xl m-auto gap-28">
+          {data.map((desc, i) => (
+            <Description key={i} {...desc} />
+          ))}
+        </div>
+      )}
     </ParallaxProvider>
   );
 };

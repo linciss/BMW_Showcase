@@ -11,7 +11,7 @@ const Models = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api');
+        const response = await axios.get('http://localhost:5000/api/models');
         setData(response.data);
         console.log(response.data);
       } catch (error) {
@@ -32,7 +32,7 @@ const Models = () => {
         <>
           <div className="max-w-min mx-auto">
             {data.map((model) => (
-              <Link to={`/models/${model.model}`} key={model.id}>
+              <Link to={`/models/${model.slug}`} key={model.slug}>
                 <Button className="hover:animate-button px-8 py-4 text-lg from-white via-black to-blue-300">
                   {model.model}
                 </Button>

@@ -13,6 +13,7 @@ const data = [
       '5-speed automatic',
     ],
     bodyStyle: ['Coupe', 'Convertible', 'Sedan', 'Touring'],
+    slug: 'e36',
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const data = [
       '5-speed automatic',
     ],
     bodyStyle: ['Coupe', 'Convertible', 'Sedan', 'Touring'],
+    slug: 'e46',
   },
   {
     id: 3,
@@ -43,6 +45,7 @@ const data = [
       '5-speed automatic',
     ],
     bodyStyle: ['Coupe', 'Convertible', 'Sedan', 'Touring'],
+    slug: 'e90',
   },
   {
     id: 4,
@@ -58,6 +61,7 @@ const data = [
       '5-speed automatic',
     ],
     bodyStyle: ['Coupe', 'Convertible', 'Sedan', 'Touring'],
+    slug: 'e92',
   },
   {
     id: 5,
@@ -67,6 +71,7 @@ const data = [
     year: '2005 to 2013',
     engine: ['1.6', '1.8', '1.9', '2.0', '2.5', '2.8', '3.0', '3.2'],
     transmission: ['5-speed manual', '6-speed manual', '4-speed automatic'],
+    bodyStyle: ['Coupe', 'Convertible', 'Sedan', 'Touring'],
   },
 ];
 export default data;
