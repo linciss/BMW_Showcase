@@ -10,6 +10,9 @@ export const Navbar = () => {
         <img src={logo} alt="logo" className="h-20 w-20 p-2" />
       </NavLink>
       <nav className="flex justify-end items-center text-lg gap-7">
+        <NavLink to="/" className="text-2xl p-2 text-center text-bmw-blue">
+          Home
+        </NavLink>
         <NavLink
           to="/models"
           className="text-2xl p-2 text-center text-bmw-blue"

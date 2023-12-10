@@ -11,13 +11,15 @@ export const ParallaxImg = (props) => {
   const foreground = {
     image: props.fg,
     speed: -10,
-    scale: 0.1,
   };
 
   return (
     <ParallaxBanner
       layers={[background, foreground]}
-      style={{ height: props.height, marginTop: props.mt }}
+      style={{
+        height: props.height,
+        marginTop: props.mt,
+      }}
       className="aspect-[2/1]"
     >
       <div className="absolute inset-0 flex items-center justify-center">

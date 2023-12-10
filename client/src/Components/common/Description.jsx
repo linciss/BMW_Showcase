@@ -28,10 +28,11 @@ export const Description = ({ id, bg, fg, text, series }) => {
               fg={fg}
               height="300px"
               mt="0px"
+              scale={-1}
               text={series}
             />
           </div>
-          <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-white mb-4 transition-all duration-500 ease-in-out">
+          <h1 className=" text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-white mb-4 transition-all duration-500 ease-in-out">
             {text}
           </h1>
         </>
@@ -46,6 +47,7 @@ export const Description = ({ id, bg, fg, text, series }) => {
               fg={fg}
               height="300px"
               mt="0px"
+              scale={1}
               text={series}
             />
           </div>

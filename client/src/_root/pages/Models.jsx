@@ -33,7 +33,7 @@ const Models = () => {
         <>
           <div className="max-w-min mx-auto">
             {data.map((model) => (
-              <Link to={`/models/${model.slug}`} key={model.slug}>
+              <Link key={model.slug} to={`/models/${model.slug}`}>
                 <Button className="hover:animate-button px-8 py-4 text-lg from-white via-black to-blue-300">
                   {model.model}
                 </Button>

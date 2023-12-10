@@ -29,7 +29,7 @@ const Insights = () => {
     <main className="max-w-7xl m-auto">
       {/* SHOWS THE MODEL FOR CONVENIENCE */}
       <div
-        className={`model sticky top-0 px-4 hidden sm:block transition-all duration-300 w-1/2 z-30`}
+        className={`sm:block py-2  sticky top-0 h-full px-4 hidden transition-all duration-300 w-1/2 z-30`}
         style={{ marginLeft: `${marginLeft / 4}rem` }}
       >
         <h1
