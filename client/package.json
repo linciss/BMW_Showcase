@@ -27,7 +27,8 @@
     "react-scroll-parallax": "^3.4.5",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.159.0"
+    "three": "^0.159.0",
+    "typeface-sora": "^1.1.13"
   },
   "devDependencies": {
     "@types/node": "^20.10.4",
