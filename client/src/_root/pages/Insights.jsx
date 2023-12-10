@@ -1,24 +1,30 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Showcase from '../../Components/threeJS/Showcase';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Canvas } from '@react-three/fiber';
-import { useEffect, useState } from 'react';
+
+const StickyTitle = ({ title, marginLeft }) => (
+  <div
+    className={`sm:block py-1 lg:py-0 sticky top-0 h-full px-4 transition-all duration-300 w-2/4 sm:w-1/2 z-20`}
+    style={{ marginLeft: `${marginLeft / 4}rem` }}
+  >
+    <h1
+      className="text-3xl py-4 sm:py-1 sm:text-6xl lg:text-7xl font-semibold bg-gradient-to-r bg-clip-text text-transparent
+         from-white  to-blue-300 animate-text"
+    >
+      {title}
+    </h1>
+  </div>
+);
 
 const Insights = () => {
-  console.log('Rendering insights!');
   const { slug } = useParams();
   const [marginLeft, setMarginLeft] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        console.log('scrolling :>> ');
-        setMarginLeft(32);
-      } else {
-        console.log('scrolling :>> ');
-        setMarginLeft(0);
-      }
+      setMarginLeft(window.scrollY > 0 ? 32 : 0);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -28,19 +34,8 @@ const Insights = () => {
   }, []);
 
   return (
-    <main className="max-w-7xl m-auto">
-      {/* SHOWS THE MODEL FOR CONVENIENCE */}
-      <div
-        className={`sm:block py-2 sticky top-0 h-full px-4 hidden transition-all duration-300 w-1/2 z-30`}
-        style={{ marginLeft: `${marginLeft / 4}rem` }}
-      >
-        <h1
-          className="text-7xl font-semibold bg-gradient-to-r bg-clip-text text-transparent
-         from-white  to-blue-300 animate-text"
-        >
-          BMW {slug}
-        </h1>
-      </div>
+    <main className="max-w-7xl mx-auto">
+      <StickyTitle title={`BMW ${slug}`} marginLeft={marginLeft} />
       <div className="flex flex-wrap sm:px-4 px-4 max-w-7xl m-auto flex-col">
         <Suspense
           fallback={
