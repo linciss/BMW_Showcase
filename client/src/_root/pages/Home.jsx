@@ -3,6 +3,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import { Description } from '@/Components/common/Description';
 import axios from 'axios';
 import { Skeleton } from '@/Components/ui/skeleton';
+import { Notifier } from '@/Components/common/Notifier';
 
 const Home = () => {
   console.log('Rendering home!');
@@ -40,6 +41,9 @@ const Home = () => {
               FANPAGE
             </h1>
           </div>
+        </div>
+        <div className="absolute sm:bottom-32 bottom-28 right-1/2 translate-x-1/2">
+          <Notifier />
         </div>
       </main>
       {loading ? (

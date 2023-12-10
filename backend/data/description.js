@@ -4,7 +4,7 @@ const desc = [
     bg: '/public/assets/bg1.png',
     fg: '/public/assets/m3.png',
     series: 'M3',
-    text: 'Are you interested to see what each of BMW models are capable of?',
+    text: 'Are you interested to see what each of the BMW models are capable of?',
   },
   {
     id: 2,

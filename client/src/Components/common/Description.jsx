@@ -22,7 +22,7 @@ export const Description = ({ id, bg, fg, text, series }) => {
     >
       {isEven ? (
         <>
-          <div className="w-full sm:w-4/5">
+          <div className="w-full sm:w-3/4">
             <ParallaxImg
               bg={bg}
               fg={fg}
