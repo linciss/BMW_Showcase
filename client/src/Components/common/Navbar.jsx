@@ -5,7 +5,7 @@ import logo from '#/assets/logo.png';
 export const Navbar = () => {
   console.log('Rendering Navbar!');
   return (
-    <header className="navbar bg-zinc-700 flex justify-between items-center sm:px-16 px-8 max-w-7xl mx-auto top-0 bg-transparent z-20 right-0 left-0 sticky ">
+    <header className="navbar  bg-zinc-700 flex justify-between items-center sm:px-16 px-4 max-w-7xl mx-auto top-0 bg-transparent z-20 right-0 left-0 sticky ">
       <NavLink to="/">
         <img src={logo} alt="logo" className="h-20 w-20 p-2" />
       </NavLink>

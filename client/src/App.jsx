@@ -6,28 +6,30 @@ import { Navbar } from './Components/common/Navbar';
 import bgImage from '#/assets/bg.jpg';
 
 const App = () => {
-  const [scrolling, setScrolling] = useState(false);
+  // const [scrolling, setScrolling] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolling = window.scrollY > 0;
-      if (isScrolling !== scrolling) {
-        setScrolling(isScrolling);
-        console.log('isScrolling :>> ', isScrolling);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const isScrolling = window.scrollY > 0;
+  //     if (isScrolling !== scrolling) {
+  //       setScrolling(isScrolling);
+  //       console.log('isScrolling :>> ', isScrolling);
+  //     }
+  //   };
 
-    document.addEventListener('scroll', handleScroll, { passive: true });
+  //   document.addEventListener('scroll', handleScroll, { passive: true });
 
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolling]);
+  //   return () => {
+  //     document.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [scrolling]);
 
   return (
     <main
-      className="bg-zinc-500 bg-cover bg-center  animate-fadeIn overflow-hidden"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      className="bg-zinc-500 bg-cover bg-center animate-fadeIn w-full"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+      }}
     >
       <Router>
         <Navbar />

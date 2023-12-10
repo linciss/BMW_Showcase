@@ -90,3 +90,6 @@
 * {
   font-family: 'Sora', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
