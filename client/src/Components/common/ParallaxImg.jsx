@@ -21,7 +21,7 @@ export const ParallaxImg = (props) => {
       className="aspect-[2/1]"
     >
       <div className="absolute inset-0 flex items-center justify-center">
-        <h1 className="text-8xl text-white font-bold">M3</h1>
+        <h1 className="text-8xl text-white font-bold">{props.text}</h1>
       </div>
     </ParallaxBanner>
   );
