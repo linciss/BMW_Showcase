@@ -16,6 +16,7 @@ const data = [
     slug: 'e36',
     description:
       "The BMW E36, produced from 1990 to 2000, epitomizes BMW's 3 Series with timeless design, dynamic handling, and versatile body styles.",
+    image: '/public/assets/cardImg/e36.png',
   },
   {
     id: 2,
@@ -34,6 +35,7 @@ const data = [
     slug: 'e46',
     description:
       'The BMW E46, spanning 1998 to 2006, epitomizes driving pleasure with iconic design, dynamic performance, and diverse body styles.',
+    image: '/public/assets/cardImg/e46.png',
   },
   {
     id: 3,
@@ -53,6 +55,7 @@ const data = [
     slug: 'e90',
     description:
       'The BMW E90 (2005–2013) redefines luxury with sleek design, advanced technology, and a harmonious blend of performance and comfort.',
+    image: '/public/assets/cardImg/e90.png',
   },
   {
     id: 4,
@@ -71,6 +74,7 @@ const data = [
     slug: 'e92',
     description:
       'The BMW E92 (2006–2013) embodies sportiness, featuring a distinctive coupe design, powerful engines, and a thrilling driving experience.',
+    image: '/public/assets/cardImg/e92.png',
   },
   {
     id: 5,
@@ -84,6 +88,7 @@ const data = [
     slug: 'e93',
     description:
       'The BMW E93 (2007–2013) delivers open-top exhilaration, combining convertible elegance with dynamic performance and advanced engineering.',
+    image: '/public/assets/cardImg/e93.png',
   },
 ];
 export default data;
