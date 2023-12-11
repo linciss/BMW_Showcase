@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation, useParams } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from '#/assets/logo.png';
+import bgImage from '#/assets/bg.jpg';
 
 export const Navbar = () => {
   const { pathname } = useLocation();
@@ -29,73 +30,84 @@ export const Navbar = () => {
   };
 
   return (
-    <header
-      className={`navbar bg-zinc-700 flex justify-between items-center 
-    sm:px-16 px-14 max-w-7xl mx-auto top-0 bg-transparent  right-0 left-0 sticky ${
-      isOpen ? 'z-50' : 'z-20'
-    }`}
+    <div
+      className="bg-zinc-700 top-0  right-0 left-0 sticky z-20"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+      }}
     >
-      <NavLink to="/">
-        <img src={logo} alt="logo" className="h-20 w-20 p-2" />
-      </NavLink>
-      {(windowWidth > 850 || isOpen) && (
-        <nav
-          className={`${
-            isOpen
-              ? 'visible flex fixed inset-0 bg-zinc-800 flex-col justify-center z-50'
-              : 'hidden'
-          } md:flex md:items-center md:text-lg md:gap-7 z-45 `}
-        >
-          <NavLink
-            to="/"
-            className={`text-2xl p-2 text-center ${
-              path === '' || path === undefined ? 'text-white' : 'text-bmw-blue'
-            } `}
-            onClick={toggleMenu}
+      <header
+        className={`navbar  flex justify-between items-center 
+  sm:px-16 px-14 max-w-7xl mx-auto bg-transparent  ${isOpen ? 'z-50' : ''}`}
+      >
+        <NavLink to="/">
+          <img src={logo} alt="logo" className="h-20 w-20 p-2" />
+        </NavLink>
+        {(windowWidth > 850 || isOpen) && (
+          <nav
+            className={`${
+              isOpen
+                ? 'visible flex fixed inset-0 bg-zinc-800 flex-col justify-center z-50'
+                : 'hidden'
+            } md:flex md:items-center md:text-lg md:gap-7 z-45 `}
           >
-            Home
-          </NavLink>
-          <NavLink
-            to="/models"
-            className={`text-2xl p-2 text-center ${
-              path === 'models' ? 'text-white' : 'text-bmw-blue'
-            }`}
-            onClick={toggleMenu}
+            <NavLink
+              to="/"
+              className={`text-2xl p-2 text-center ${
+                path === '' || path === undefined
+                  ? 'text-white  bg-bmw-dark-blue rounded-xl'
+                  : 'text-bmw-blue'
+              } transition-all duration-300 ease-in-out`}
+              onClick={toggleMenu}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/models"
+              className={`text-2xl p-2 text-center ${
+                path === 'models'
+                  ? 'text-white  bg-bmw-dark-blue rounded-xl'
+                  : 'text-bmw-blue'
+              } transition-all duration-300 ease-in-out`}
+              onClick={toggleMenu}
+            >
+              Models
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={`text-2xl p-2 text-center ${
+                path === 'about'
+                  ? 'text-white bg-bmw-dark-blue rounded-xl'
+                  : 'text-bmw-blue'
+              } transition-all duration-300 ease-in-out`}
+              onClick={toggleMenu}
+            >
+              About
+            </NavLink>
+          </nav>
+        )}
+        {windowWidth <= 850 && (
+          <button
+            className={`hamburger z-50 top-5 right-5`}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
           >
-            Models
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={`text-2xl p-2 text-center ${
-              path === 'about' ? 'text-white' : 'text-bmw-blue'
-            }`}
-            onClick={toggleMenu}
-          >
-            About
-          </NavLink>
-        </nav>
-      )}
-      {windowWidth <= 850 && (
-        <button
-          className={`hamburger z-50 top-5 right-5`}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Menu"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="white"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      )}
-    </header>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="white"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        )}
+      </header>
+    </div>
   );
 };
