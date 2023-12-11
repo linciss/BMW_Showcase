@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 import logo from '#/assets/logo.png';
 
 export const Navbar = () => {
-  console.log(' Renderung nav bar :>> ');
+  const { pathname } = useLocation();
+  const path = pathname.split('/')[1];
+  console.log('object :>> ', path);
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -42,25 +44,31 @@ export const Navbar = () => {
             isOpen
               ? 'visible flex fixed inset-0 bg-zinc-800 flex-col justify-center z-50'
               : 'hidden'
-          } md:flex md:items-center md:text-lg md:gap-7 z-45 }}`}
+          } md:flex md:items-center md:text-lg md:gap-7 z-45 `}
         >
           <NavLink
             to="/"
-            className="text-2xl p-2 text-center text-bmw-blue"
+            className={`text-2xl p-2 text-center ${
+              path === '' || path === undefined ? 'text-white' : 'text-bmw-blue'
+            } `}
             onClick={toggleMenu}
           >
             Home
           </NavLink>
           <NavLink
             to="/models"
-            className="text-2xl p-2 text-center text-bmw-blue"
+            className={`text-2xl p-2 text-center ${
+              path === 'models' ? 'text-white' : 'text-bmw-blue'
+            }`}
             onClick={toggleMenu}
           >
             Models
           </NavLink>
           <NavLink
             to="/about"
-            className="text-2xl p-2 text-center text-bmw-blue"
+            className={`text-2xl p-2 text-center ${
+              path === 'about' ? 'text-white' : 'text-bmw-blue'
+            }`}
             onClick={toggleMenu}
           >
             About
