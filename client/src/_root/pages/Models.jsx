@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Skeleton } from '@/Components/ui/skeleton';
+import { CarCard } from '@/Components/common/CarCard';
 
 const Models = () => {
   console.log('Rendering models!');
@@ -26,17 +27,15 @@ const Models = () => {
   }, []);
 
   return (
-    <main className="flex flex-wrap sm:px-4 px-4 max-w-7xl m-auto flex-col z-10">
+    <main className="flex flex-wrap sm:px-4 px-4 max-w-7xl m-auto z-10">
       {loading ? (
         <Skeleton className="h-screen" />
       ) : (
         <>
-          <div className="max-w-min mx-auto">
+          <div className="flex flex-row flex-wrap m-auto gap-8  justify-center">
             {data.map((model) => (
               <Link key={model.slug} to={`/models/${model.slug}`}>
-                <Button className="hover:animate-button px-8 py-4 text-lg from-white via-black to-blue-300">
-                  {model.model}
-                </Button>
+                <CarCard model={model.slug} description={model.description} />
               </Link>
             ))}
           </div>

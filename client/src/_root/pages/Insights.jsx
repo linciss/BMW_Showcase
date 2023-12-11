@@ -6,6 +6,7 @@ import { Canvas } from '@react-three/fiber';
 import { StickyTitle } from '@/Components/common/StickyTitle';
 
 const Insights = () => {
+  console.log('Insights.jsx');
   const { slug } = useParams();
   const [marginLeft, setMarginLeft] = useState(0);
 
