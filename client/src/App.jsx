@@ -6,23 +6,7 @@ import { Navbar } from './Components/common/Navbar';
 import bgImage from '#/assets/bg.jpg';
 
 const App = () => {
-  // const [scrolling, setScrolling] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const isScrolling = window.scrollY > 0;
-  //     if (isScrolling !== scrolling) {
-  //       setScrolling(isScrolling);
-  //       console.log('isScrolling :>> ', isScrolling);
-  //     }
-  //   };
-
-  //   document.addEventListener('scroll', handleScroll, { passive: true });
-
-  //   return () => {
-  //     document.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [scrolling]);
+  window.scrollTo(0, 0);
 
   return (
     <main

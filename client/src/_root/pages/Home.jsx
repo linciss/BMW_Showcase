@@ -6,6 +6,7 @@ import { Skeleton } from '@/Components/ui/skeleton';
 import { Notifier } from '@/Components/common/Notifier';
 
 const Home = () => {
+  window.scrollTo(0, 0);
   console.log('Rendering home!');
   const [data, setData] = useState([{}]);
   const [loading, setLoading] = useState(true);

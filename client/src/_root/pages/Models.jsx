@@ -5,6 +5,7 @@ import { Skeleton } from '@/Components/ui/skeleton';
 import { CarCard } from '@/Components/common/CarCard';
 
 const Models = () => {
+  window.scrollTo(0, 0);
   console.log('Rendering models!');
   const [data, setData] = useState([{}]);
   const [loading, setLoading] = useState(true);
@@ -34,7 +35,11 @@ const Models = () => {
           <div className="flex flex-row flex-wrap m-auto gap-8  justify-center">
             {data.map((model) => (
               <Link key={model.slug} to={`/models/${model.slug}`}>
-                <CarCard model={model.slug} description={model.description} />
+                <CarCard
+                  model={model.slug}
+                  description={model.description}
+                  img={model.image}
+                />
               </Link>
             ))}
           </div>

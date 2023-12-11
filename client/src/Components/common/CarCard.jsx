@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { Card, CardContent, CardHeader } from '../ui/card';
 import logo from '#/assets/logo.png';
 import React, { useState } from 'react';
 
-export const CarCard = ({ model, description }) => {
+export const CarCard = ({ model, description, img }) => {
   const [isMouseOver, setMouseOver] = useState(false);
 
   const handleMouseEnter = () => {
@@ -22,7 +23,7 @@ export const CarCard = ({ model, description }) => {
         className={`flex items-center overflow-hidden relative h-full justify-center bg-zinc-900`}
       >
         <img
-          src={logo}
+          src={img || logo}
           className={`${
             isMouseOver ? 'scale-125' : ''
           } object-fill transition-all duration-700 ease-in-out bg-zinc-900`}

@@ -10,6 +10,7 @@ const Insights = () => {
   const [marginLeft, setMarginLeft] = useState(0);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const handleScroll = () => {
       setMarginLeft(window.scrollY > 20 ? 32 : 0);
     };
@@ -37,14 +38,6 @@ const Insights = () => {
         </Suspense>
       </div>
       <main className="pb-8">
-        <div className={`p-4 block sm:hidden`}>
-          <h1
-            className="text-6xl font-semibold bg-gradient-to-r bg-clip-text
-           text-transparent from-white via-black to-blue-300 animate-text"
-          >
-            BMW {slug}
-          </h1>
-        </div>
         <h1 className="text-7xl font-semibold text-center text-black">
           Insights
         </h1>
