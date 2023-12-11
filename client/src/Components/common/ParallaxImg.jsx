@@ -20,7 +20,7 @@ export const ParallaxImg = (props) => {
         height: props.height,
         marginTop: props.mt,
       }}
-      className="aspect-[2/1]"
+      className="aspect-[2/1] rounded-xl shadow-xl"
     >
       <div className="absolute inset-0 flex items-center justify-center">
         <h1 className="text-8xl text-white font-bold">{props.text}</h1>
