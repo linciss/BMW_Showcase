@@ -1,32 +1,51 @@
-/* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
-import { useLoader } from '@react-three/fiber';
+import React, { useEffect, useState } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Mesh } from 'three';
+import { redirect } from 'react-router-dom';
 
-const Car = ({ path }) => {
-  const gltf = useLoader(
-    GLTFLoader,
-    `../../public/models/car/${path}/scene.gltf`
-  );
+const CarModel = ({ path }) => {
+  const [model, setModel] = useState(null);
 
   useEffect(() => {
-    gltf.scene.position.set(0, -0.1, 0);
+    const loadModel = async () => {
+      try {
+        const loader = new GLTFLoader();
+        const gltf = await new Promise((resolve, reject) => {
+          loader.load(
+            `../../public/models/car/${path}/scene.gltf`,
+            resolve,
+            undefined,
+            reject
+          );
+        });
 
-    //const objectToColor = gltf.scene.getObjectByName('Object_11');
-    gltf.scene.traverse((object) => {
-      if (object instanceof Mesh) {
-        // if (objectToColor.material instanceof MeshStandardMaterial) {
-        //   objectToColor.material.color.set(0x000000);
-        // }
-        object.castShadow = true;
-        object.receiveShadow = true;
-        object.material.envMapIntensity = 0;
+        gltf.scene.position.set(0, -0.1, 0);
+
+        gltf.scene.traverse((object) => {
+          if (object instanceof Mesh) {
+            object.castShadow = true;
+            object.receiveShadow = true;
+            object.material.envMapIntensity = 0;
+          }
+        });
+
+        setModel(gltf.scene);
+      } catch (error) {
+        console.error(`Error loading model for path: ${path}`, error);
+        redirect('/models');
       }
-    });
-  }, [gltf]);
+    };
+
+    loadModel();
+  }, [path]);
+
+  if (!model) {
+    redirect('/models');
+    return null;
+  }
 
   // eslint-disable-next-line react/no-unknown-property
-  return <primitive object={gltf.scene} />;
+  return <primitive object={model} />;
 };
-export default Car;
+
+export default CarModel;

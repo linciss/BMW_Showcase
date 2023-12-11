@@ -1,4 +1,3 @@
-import { Button } from '@/Components/ui/button';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -27,7 +26,7 @@ const Models = () => {
   }, []);
 
   return (
-    <main className="flex flex-wrap sm:px-4 px-4 max-w-7xl m-auto z-10">
+    <main className="flex flex-wrap sm:px-4 px-0 max-w-7xl m-auto z-10">
       {loading ? (
         <Skeleton className="h-screen" />
       ) : (

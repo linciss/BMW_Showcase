@@ -6,13 +6,12 @@ import { Canvas } from '@react-three/fiber';
 import { StickyTitle } from '@/Components/common/StickyTitle';
 
 const Insights = () => {
-  console.log('Insights.jsx');
   const { slug } = useParams();
   const [marginLeft, setMarginLeft] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setMarginLeft(window.scrollY > 0 ? 32 : 0);
+      setMarginLeft(window.scrollY > 20 ? 32 : 0);
     };
 
     window.addEventListener('scroll', handleScroll);

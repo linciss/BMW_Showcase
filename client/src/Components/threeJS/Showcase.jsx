@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
+import { Skeleton } from '../ui/skeleton';
 import Car from './Car';
 import Ground from './Ground';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 const Showcase = ({ path }) => {
   return (
@@ -31,7 +32,9 @@ const Showcase = ({ path }) => {
         shadow-bias={-0.0001}
       />
       <Ground />
-      <Car path={path} />
+      <Suspense fallback={<Skeleton className="h-full" />}>
+        <Car path={path} />
+      </Suspense>
     </>
   );
 };
