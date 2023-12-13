@@ -63,7 +63,7 @@ export const Navbar = () => {
             >
               Home
             </NavLink>
-            <div className="relative group ">
+            <div className="relative group">
               <div
                 to="/models"
                 className={`models text-2xl p-2 text-center relative cursor-default ${
