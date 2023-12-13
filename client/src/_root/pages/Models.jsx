@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Skeleton } from '@/Components/ui/skeleton';
 import { CarCard } from '@/Components/common/CarCard';
@@ -9,11 +9,14 @@ const Models = () => {
   console.log('Rendering models!');
   const [data, setData] = useState([{}]);
   const [loading, setLoading] = useState(true);
+  const { series } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/models');
+        const response = await axios.get(
+          `http://localhost:5000/api/models/${series}`
+        );
         setData(response.data);
         console.log(response.data);
       } catch (error) {
@@ -24,7 +27,7 @@ const Models = () => {
     };
 
     fetchData();
-  }, []);
+  }, [series]);
 
   return (
     <main className="flex flex-wrap sm:px-4 px-0 max-w-7xl m-auto z-10">
@@ -34,7 +37,7 @@ const Models = () => {
         <>
           <div className="flex flex-row flex-wrap m-auto gap-8  justify-center">
             {data.map((model) => (
-              <Link key={model.slug} to={`/models/${model.slug}`}>
+              <Link key={model.slug} to={`/models/${series}/${model.slug}`}>
                 <CarCard
                   model={model.slug}
                   description={model.description}
