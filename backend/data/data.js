@@ -90,5 +90,19 @@ const data = [
       'The BMW E93 (2007–2013) delivers open-top exhilaration, combining convertible elegance with dynamic performance and advanced engineering.',
     image: '/public/assets/cardImg/e93.png',
   },
+  {
+    id: 5,
+    mark: 'BMW',
+    series: '5',
+    model: 'e93',
+    year: '2005 to 2013',
+    engine: ['1.6', '1.8', '1.9', '2.0', '2.5', '2.8', '3.0', '3.2'],
+    transmission: ['5-speed manual', '6-speed manual', '4-speed automatic'],
+    bodyStyle: ['Coupe', 'Convertible', 'Sedan', 'Touring'],
+    slug: 'e93',
+    description:
+      'The BMW E93 (2007–2013) delivers open-top exhilaration, combining convertible elegance with dynamic performance and advanced engineering.',
+    image: '/public/assets/cardImg/e93.png',
+  },
 ];
 export default data;

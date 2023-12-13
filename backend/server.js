@@ -6,8 +6,11 @@ import desc from './data/description.js';
 const app = Express();
 app.use(cors());
 
-app.get('/api/models', (req, res) => {
-  res.json(data);
+app.get('/api/models/:series', (req, res) => {
+  const series = req.params.series;
+  console.log(series);
+  const filteredData = data.filter((model) => model.series === series);
+  res.json(filteredData);
 });
 app.get('/api/description', (req, res) => {
   res.json(desc);
