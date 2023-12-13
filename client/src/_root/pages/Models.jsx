@@ -35,16 +35,21 @@ const Models = () => {
         <Skeleton className="h-screen" />
       ) : (
         <>
-          <div className="flex flex-row flex-wrap m-auto gap-8  justify-center">
-            {data.map((model) => (
-              <Link key={model.slug} to={`/models/${series}/${model.slug}`}>
-                <CarCard
-                  model={model.slug}
-                  description={model.description}
-                  img={model.image}
-                />
-              </Link>
-            ))}
+          <h1 className="text-7xl font-semibold text-center text-white w-full">
+            BMW {series} Series
+          </h1>
+          <div>
+            <div className="flex flex-row flex-wrap m-auto gap-8  justify-center">
+              {data.map((model) => (
+                <Link key={model.slug} to={`/models/${series}/${model.slug}`}>
+                  <CarCard
+                    model={model.slug}
+                    description={model.description}
+                    img={model.image}
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
         </>
       )}
