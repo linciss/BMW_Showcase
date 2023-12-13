@@ -8,6 +8,10 @@ app.use(cors());
 
 app.get('/api/models/:series', (req, res) => {
   const series = req.params.series;
+  if (series === 'all') {
+    res.json(data);
+    return;
+  }
   console.log(series);
   const filteredData = data.filter((model) => model.series === series);
   res.json(filteredData);
