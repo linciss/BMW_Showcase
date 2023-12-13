@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import logo from '#/assets/logo.png';
 import bgImage from '#/assets/bg.jpg';
+import { Dropdown } from './Dropdown';
 
 export const Navbar = () => {
   const { pathname } = useLocation();
   const path = pathname.split('/')[1];
-  console.log('object :>> ', path);
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -31,14 +31,15 @@ export const Navbar = () => {
 
   return (
     <div
-      className="bg-zinc-700 top-0  right-0 left-0 sticky z-20"
+      className="bg-zinc-700 top-0 right-0 left-0 sticky z-20"
       style={{
         backgroundImage: `url(${bgImage})`,
       }}
     >
       <header
-        className={`navbar  flex justify-between items-center 
-  sm:px-16 px-14 max-w-7xl mx-auto bg-transparent  ${isOpen ? 'z-50' : ''}`}
+        className={`navbar flex justify-between items-center sm:px-16 px-14 max-w-7xl mx-auto bg-transparent ${
+          isOpen ? 'z-50' : ''
+        }`}
       >
         <NavLink to="/">
           <img src={logo} alt="logo" className="h-20 w-20 p-2" />
@@ -55,24 +56,26 @@ export const Navbar = () => {
               to="/"
               className={`text-2xl p-2 text-center ${
                 path === '' || path === undefined
-                  ? 'text-white  bg-bmw-dark-blue rounded-xl'
+                  ? 'text-white bg-bmw-dark-blue rounded-xl'
                   : 'text-bmw-blue'
               } transition-all duration-300 ease-in-out`}
               onClick={toggleMenu}
             >
               Home
             </NavLink>
-            <NavLink
-              to="/models"
-              className={`text-2xl p-2 text-center ${
-                path === 'models'
-                  ? 'text-white  bg-bmw-dark-blue rounded-xl'
-                  : 'text-bmw-blue'
-              } transition-all duration-300 ease-in-out`}
-              onClick={toggleMenu}
-            >
-              Models
-            </NavLink>
+            <div className="relative group ">
+              <div
+                to="/models"
+                className={`models text-2xl p-2 text-center relative cursor-default ${
+                  path === 'models'
+                    ? 'text-white bg-bmw-dark-blue rounded-xl'
+                    : 'text-bmw-blue'
+                } transition-all duration-300 ease-in-out`}
+              >
+                Models
+                <Dropdown />
+              </div>
+            </div>
             <NavLink
               to="/about"
               className={`text-2xl p-2 text-center ${
