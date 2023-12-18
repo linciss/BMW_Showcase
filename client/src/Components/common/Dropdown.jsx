@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const Dropdown = () => {
   return (
-    <div className="absolute z-20 hidden mt-2 bg-white border rounded-md shadow-lg group-hover:block w-96 right-0 translate-x-1/3">
+    <div className="z-20 hidden mt-2 bg-white border rounded-md shadow-lg group-hover:block sm:w-96 sm:right-0 sm:translate-x-1/3 absolute w-full">
       <div>
         <h2 className="text-gray-950">Model menu</h2>
       </div>

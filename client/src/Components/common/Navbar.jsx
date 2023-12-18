@@ -30,12 +30,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div
-      className="bg-zinc-700 top-0 right-0 left-0 sticky z-20"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
-    >
+    <div className="bg-bmw-dark-blue top-0 right-0 left-0 sticky z-20">
       <header
         className={`navbar flex justify-between items-center sm:px-16 px-14 max-w-7xl mx-auto bg-transparent ${
           isOpen ? 'z-50' : ''

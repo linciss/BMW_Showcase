@@ -39,7 +39,7 @@ const Home = () => {
               BMW
             </h1>
             <h1 className="text-center text-7xl sm:text-8xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-bmw-blue via-bmw-dark-blue to-bmw-red animate-text block mb-4">
-              FANPAGE
+              SHOWCASE
             </h1>
           </div>
         </div>

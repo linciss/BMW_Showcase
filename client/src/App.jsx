@@ -3,18 +3,12 @@ import { Home, Models, Insights, About } from './_root/pages/index';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import { Navbar } from './Components/common/Navbar';
-import bgImage from '#/assets/bg.jpg';
 
 const App = () => {
   window.scrollTo(0, 0);
 
   return (
-    <main
-      className="bg-zinc-500 bg-cover bg-center animate-fadeIn w-full"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
-    >
+    <main className="bg-white bg-cover bg-center animate-fadeIn w-full">
       <Router>
         <Navbar />
         <Routes>
