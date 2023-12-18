@@ -38,7 +38,7 @@ const Home = () => {
             <h1 className="text-center text-8xl sm:text-9xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-bmw-blue via-bmw-dark-blue to-bmw-red animate-text block">
               BMW
             </h1>
-            <h1 className="text-center text-7xl sm:text-8xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-bmw-blue via-bmw-dark-blue to-bmw-red animate-text block mb-4">
+            <h1 className="text-center text-5xl sm:text-8xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-bmw-blue via-bmw-dark-blue to-bmw-red animate-text block mb-4">
               SHOWCASE
             </h1>
           </div>
