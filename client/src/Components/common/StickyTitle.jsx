@@ -8,8 +8,8 @@ export const StickyTitle = ({ title, marginLeft }) => {
       style={{ marginLeft: `${marginLeft / 4}rem` }}
     >
       <h1
-        className="text-3xl py-4 sm:py-1 sm:text-6xl lg:text-7xl font-semibold bg-gradient-to-r bg-clip-text text-transparent
-         from-white  to-blue-300 animate-text"
+        className="text-3xl py-4 sm:py-1 sm:text-6xl lg:text-7xl font-semibold 
+        text-bmw-blue"
       >
         {title}
       </h1>
