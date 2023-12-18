@@ -19,7 +19,7 @@ export const CarCard = ({ model, description, img }) => {
         className={`-translate-y-1/3 flex flex-col pointer-events-none transition-all duration-500 ease-in-out group-hover:-translate-y-full `}
       >
         <div className="flex justify-between items-center p-4 w-full ">
-          <div className={`text-3xl font-semibold text-bmw-dark-blue`}>
+          <div className={`text-3xl font-semibold text-bmw-blue`}>
             {/* Model here */}
             {model}
           </div>
