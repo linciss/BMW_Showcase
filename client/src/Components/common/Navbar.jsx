@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import logo from '#/assets/logo.png';
-import bgImage from '#/assets/bg.jpg';
 import { Dropdown } from './Dropdown';
 
 export const Navbar = () => {
@@ -27,6 +26,7 @@ export const Navbar = () => {
 
   const toggleMenu = () => {
     if (isOpen) setIsOpen(!isOpen);
+    console.log('PRESSED!!! :>> ');
   };
 
   return (
@@ -68,7 +68,9 @@ export const Navbar = () => {
                 } transition-all duration-300 ease-in-out`}
               >
                 Models
-                <Dropdown />
+                <div onClick={toggleMenu}>
+                  <Dropdown />
+                </div>
               </div>
             </div>
             <NavLink
