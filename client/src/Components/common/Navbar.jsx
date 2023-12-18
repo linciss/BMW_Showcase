@@ -49,9 +49,9 @@ export const Navbar = () => {
           >
             <NavLink
               to="/"
-              className={`text-2xl p-2 text-center ${
+              className={` rounded-xl  text-2xl p-2 text-center ${
                 path === '' || path === undefined
-                  ? 'text-white bg-bmw-dark-blue rounded-xl'
+                  ? 'text-white bg-bmw-blue rounded-xl'
                   : 'text-bmw-blue'
               } transition-all duration-300 ease-in-out`}
               onClick={toggleMenu}
@@ -61,9 +61,9 @@ export const Navbar = () => {
             <div className="relative group">
               <div
                 to="/models"
-                className={`models text-2xl p-2 text-center relative cursor-default ${
+                className={`models rounded-xl  text-2xl p-2 text-center relative cursor-default ${
                   path === 'models'
-                    ? 'text-white bg-bmw-dark-blue rounded-xl'
+                    ? 'text-white bg-bmw-blue '
                     : 'text-bmw-blue'
                 } transition-all duration-300 ease-in-out`}
               >
@@ -75,10 +75,8 @@ export const Navbar = () => {
             </div>
             <NavLink
               to="/about"
-              className={`text-2xl p-2 text-center ${
-                path === 'about'
-                  ? 'text-white bg-bmw-dark-blue rounded-xl'
-                  : 'text-bmw-blue'
+              className={`rounded-xl text-2xl p-2 text-center ${
+                path === 'about' ? 'text-white bg-bmw-blue ' : 'text-bmw-blue'
               } transition-all duration-300 ease-in-out`}
               onClick={toggleMenu}
             >
