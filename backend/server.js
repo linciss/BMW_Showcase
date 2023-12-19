@@ -10,10 +10,15 @@ app.use(cors());
 
 app.get('/api/models', async (req, res) => {
   try {
-    const cars = await Car.find({});
+    const page = req.query.page || 1;
+    const pageSize = 10;
+    const skip = (page - 1) * pageSize;
+
+    const cars = await Car.find({}).skip(skip).limit(pageSize);
     res.json(cars);
   } catch (error) {
     console.log(error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
