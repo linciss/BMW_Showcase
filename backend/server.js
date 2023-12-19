@@ -1,28 +1,49 @@
+import 'dotenv/config';
 import Express from 'express';
 import cors from 'cors';
-import data from './data/data.js';
-import desc from './data/description.js';
-
+import mongoose from 'mongoose';
+import { Car } from './models/CarSchema.js';
+import { Description } from './models/DescriptionSchema.js';
+const PORT = process.env.PORT || 5000;
 const app = Express();
 app.use(cors());
 
-app.get('/api/models/:series', (req, res) => {
-  const series = req.params.series;
-  if (series === 'all') {
-    res.json(data);
-    return;
+app.get('/api/models/:series', async (req, res) => {
+  try {
+    const series = req.params.series;
+    if (series === 'all') {
+      const cars = await Car.find({});
+      res.json(cars);
+      return;
+    }
+    const filteredData = await Car.find({ series: series });
+    res.json(filteredData);
+  } catch (error) {
+    console.log(error);
   }
-  console.log(series);
-  const filteredData = data.filter((model) => model.series === series);
-  res.json(filteredData);
 });
-app.get('/api/description', (req, res) => {
-  res.json(desc);
+
+app.get('/api/description', async (req, res) => {
+  try {
+    const descriptions = await Description.find({});
+    res.json(descriptions);
+  } catch (error) {
+    console.log(error);
+  }
 });
+
 app.get('/api', (req, res) => {
   res.json({ message: 'Hello from server!' });
 });
 
-app.listen(5000, () => {
-  console.log('Server listening on port 5000');
-});
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log('Connected to MongoDB');
+    app.listen(PORT, () => {
+      console.log('Server listening on port 5000');
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
