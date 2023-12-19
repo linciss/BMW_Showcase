@@ -8,16 +8,10 @@ const PORT = process.env.PORT || 5000;
 const app = Express();
 app.use(cors());
 
-app.get('/api/models/:series', async (req, res) => {
+app.get('/api/models', async (req, res) => {
   try {
-    const series = req.params.series;
-    if (series === 'all') {
-      const cars = await Car.find({});
-      res.json(cars);
-      return;
-    }
-    const filteredData = await Car.find({ series: series });
-    res.json(filteredData);
+    const cars = await Car.find({});
+    res.json(cars);
   } catch (error) {
     console.log(error);
   }
