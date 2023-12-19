@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import logo from '#/assets/logo.png';
 import { Dropdown } from './Dropdown';
 
@@ -61,19 +61,17 @@ export const Navbar = () => {
               Home
             </NavLink>
             <div className="relative group">
-              <div
+              <Link
                 to="/models"
                 className={`models rounded-xl  text-2xl p-2 text-center relative cursor-default ${
                   path === 'models'
                     ? 'text-white bg-bmw-blue '
                     : 'text-bmw-blue'
-                } transition-all duration-300 ease-in-out`}
+                } transition-all duration-300 ease-in-out cursor-pointer`}
+                onClick={toggleMenu}
               >
                 Models
-                <div onClick={toggleMenu}>
-                  <Dropdown />
-                </div>
-              </div>
+              </Link>
             </div>
             <NavLink
               to="/about"
