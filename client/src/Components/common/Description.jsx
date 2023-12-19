@@ -40,7 +40,7 @@ export const Description = ({ id, bg, fg, text, series }) => {
               {text}
             </h1>
             <div className="text-center">
-              <Link to="/models/all">
+              <Link to="/models">
                 <Button className="w-1/2 text-bmw-blue bg-bmw-dark-blue">
                   Check out the models!
                 </Button>

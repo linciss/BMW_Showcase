@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import logo from '#/assets/logo.png';
-import { Dropdown } from './Dropdown';
 
 export const Navbar = () => {
   const { pathname } = useLocation();
