@@ -2,6 +2,8 @@
 import React from 'react';
 import { ParallaxImg } from './ParallaxImg';
 import { useInView } from 'react-intersection-observer';
+import { Button } from '../ui/button';
+import { Link } from 'react-router-dom';
 
 export const Description = ({ id, bg, fg, text, series }) => {
   if (!fg) console.log('No fg');
@@ -17,8 +19,9 @@ export const Description = ({ id, bg, fg, text, series }) => {
     <div
       ref={ref}
       className={`flex flex-col sm:flex-row ${
-        inView ? 'animate-fadeInBottom' : `opacity-0 }}`
-      }`}
+        inView ? 'animate-fadeInBottom' : `opacity-0 `
+      }
+      `}
     >
       {isEven ? (
         <>
@@ -32,13 +35,22 @@ export const Description = ({ id, bg, fg, text, series }) => {
               text={series}
             />
           </div>
-          <h1 className=" text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-black mb-4 transition-all duration-500 ease-in-out">
-            {text}
-          </h1>
+          <div className="w-full sm:w-3/4">
+            <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-black mb-4 transition-all duration-500 ease-in-out">
+              {text}
+            </h1>
+            <div className="text-center">
+              <Link to="/models/all">
+                <Button className="w-1/2 text-bmw-blue bg-bmw-dark-blue">
+                  Check out the models!
+                </Button>
+              </Link>
+            </div>
+          </div>
         </>
       ) : (
         <>
-          <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold text-black mb-4 transition-all duration-500 ease-in-out">
+          <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl  font-semibold text-black mb-4 transition-all duration-500 ease-in-out">
             {text}
           </h1>
           <div className="w-full sm:w-3/4">
